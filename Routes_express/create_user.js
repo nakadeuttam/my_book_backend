@@ -6,7 +6,7 @@ const router=express.Router();
 const bcrypt = require('bcrypt');   //used in hashing the password
 const jwt = require('jsonwebtoken');
 const User = require('../models_mongo/User')
-const jwt_SECRET='Uttamnakadeneverifykiyahai'
+const jwt_SECRET=process.env.JWT_SECRET;
 const fetchUser=require('../middleware/fetchUser')
 
 //Sign Up section
@@ -47,7 +47,7 @@ router.post('/signUp',[
       res.json(token)
     }catch (error){
         console.error(error.message);
-        res.send("Some Unknown error is occured")
+        res.status(500).send("Internal Server Error")
       }
 });
 

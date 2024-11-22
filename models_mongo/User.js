@@ -11,8 +11,11 @@ const UserSchema = new Schema({
     unique: true
     },
     password: {
-        type:String, required:true,
+        type:String , default:null
     },
+    googleId: { 
+        type: String
+     },
     date: {
         type: Date,
         default:Date.now

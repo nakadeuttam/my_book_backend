@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const jwt_SECRET='Uttamnakadeneverifykiyahai'
+const jwt_SECRET=process.env.JWT_SECRET;
 
 const fetchUserData = async (req,res,next) =>{
     const Token=req.header("auth-token");       //here we passed auth-token by thunder client via header
