@@ -7,9 +7,9 @@ var cors = require('cors')
 connectToMongo();
 const authRouter = require('./Routes_express/authrouter')
 const corsOptions = {
-  origin: 'https://my-book-by-ugn.netlify.app' || 'http://localhost:3000', // Allow requests from this origin
+  origin: 'https://my-book-by-ugn.netlify.app', // Allow requests from this origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow these HTTP methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
+  allowedHeaders: ['Content-Type', 'Authorization' , 'auth-token'], // Allow these headers
 };
 app.use(cors(corsOptions))
 app.use('/auth' , authRouter)
